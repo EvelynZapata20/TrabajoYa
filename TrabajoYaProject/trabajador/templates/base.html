@@ -28,11 +28,17 @@
         <!-- Topbar End -->
     
         <nav class="nav-bar">
+            <div class="greeting">
+                {% if user.is_authenticated %}
+                <h3>Hi, {{ user.username }}</h3>
+                {% endif %}
+            </div>
             <div class="tabs">
                 <ul>
                     <li><a href="">Mi Cuenta</a></li>
                     <li><a href="{% url 'trabajadores' %}">Servicios</a></li>
                     <li><a href="">Mis Vacantes</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
                 </ul>
             </div>  
         </nav>

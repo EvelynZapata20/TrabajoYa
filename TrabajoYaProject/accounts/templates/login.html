@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/accounts/login.css' %}"> 
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="{% static 'img/logo_tab.png' %}">
+</head>
+<body>
+    <div class="login-container">
+        <a href="{% url 'home' %}">
+            <img src="{% static 'img/logo.png' %}" alt="Logo"> <br><br>
+        </a>
+        <h1>Login</h1> 
+        <!-- Form for the login -->
+        <form action="{% url 'login' %}" method="POST">
+            <!-- Security token -->
+            {% csrf_token %}
+            <!-- Display all the field in the form -->
+            {{ form.as_p }}
+            <input type="submit" value="Login" class="login-button">
+        </form> <br><br>
+        <!-- Link to the signup pages -->
+        <p>Not yet registered?</p>
+        <a href="{% url 'empleador_signup' %}" class="empleador-signup-button">Signup as empleador</a>
+        <a href="{% url 'trabajador_signup' %}" class="trabajador-signup-button">Signup as trabajador</a>
+    </div>
+</body>
+</html>
