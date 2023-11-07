@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+{% extends 'baseTrabajador.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Mis Ofertas {% endblock %}</title>
+    {% block additional_styles %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css\trabajador\ofertasTrabajador.css' %}">
+    <script src="https://kit.fontawesome.com/b685c17320.js" crossorigin="anonymous"></script>
+    {% endblock additional_styles %}
+</head>
+
+<body>
+   <main>
+        {% block content %}
+
+        <div class= "titulo">
+            <h2>Mis Ofertas</h2>
+        </div>
+
+
+        <form action="" class="barraBusqueda">
+
+            <div class="grupoBusqueda">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="controlFormulario" name="terminoBusqueda" placeholder="Buscar...">
+            </div>
+
+            <!-- Dropdown for the filters -->
+            <div class="filtro">
+                <i class="fa-solid fa-arrow-down-wide-short"></i>
+                <select class="controlFormulario" name="filtroBusqueda">
+                    <option value="todo">Todo</option>
+                    <option value="servicio">Servicio</option>
+                    <option value="disponibilidad">Disponibilidad</option>
+                    <option value="lugar">Lugar</option>
+                    <option value="precio">Precio</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+
+        <div class="nuevaOferta">
+            <a href="{% url 'crearOferta' %}" class="btn btn-primary">Nueva Oferta</a>
+        </div>   
+        
+        <div class="listaOfertas">
+            {% for oferta in ofertas %}
+            <div class="cartaOfertas">
+                <h5 class="card-header"><strong>{{ oferta.servicio }}</strong></h5>
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Información</strong></h5>
+                    <p><strong>Trabajador: </strong> {{ oferta.trabajador.nombre }}</p>
+                    <p><strong>Disponibilidad: </strong> {{ oferta.disponibilidad }} </p>
+                    <p><strong>Restricciones: </strong> {{ oferta.restricciones }} </p>
+                    <p><strong>Lugar: </strong> {{ oferta.lugar }} </p>
+                    <p><strong>Contacto: </strong> {{ oferta.contacto }} </p>
+                    <p><strong>Precio: </strong> {{ oferta.precio }} </p>
+                    <p><strong>Disponibilidad: </strong>
+                    {% if oferta.sigue %}
+                        Disponible 
+                    {% else %}
+                        No disponible
+                    {% endif %}
+                    </p>
+                    <div class="card-button">
+                        <a href="{% url 'administrarOferta' ofertaID=oferta.id%}" class="btn btn-primary">Administrar</a>
+                    </div>
+                </div>
+              </div>
+
+            {% endfor %}
+        </div>
+        {% endblock content %}
+    </main>
+
+</body>
+</html>

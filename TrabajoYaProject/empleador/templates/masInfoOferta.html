@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+{% extends 'baseEmpleador.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Ver más {% endblock %}</title>
+    {% block additional_styles %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css\empleador\masInfoOferta.css' %}">
+    <script src="https://kit.fontawesome.com/b685c17320.js" crossorigin="anonymous"></script>
+    {% endblock additional_styles %}
+</head>
+
+<body>
+   <main>
+        {% block content %}
+
+        <div class= "titulo">
+            <h2>Más Información</h2>
+        </div>
+     
+        <div class="Oferta">
+            <div class="cartaOferta" style="width: 90rem;">
+                <img class="card-img-top" src="{{ oferta.trabajador.foto.url }}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center; font-weight: bold;">{{ oferta.servicio }}</h5>
+                  <h5 class="card-title" style="text-align: left; font-weight: bold;">Sobre el trabajador</h5>
+                    <p><strong>Ofrecido por: </strong> {{ oferta.trabajador.nombre }} {{oferta.trabajador.apellidos}}</p>
+                    <p><strong>Edad: </strong> {{ oferta.trabajador.fecha_nacimiento }}</p>
+                    <p><strong>Celular: </strong> {{ oferta.trabajador.celular }}</p>
+                    <p><strong>Habilidades: </strong> {{ oferta.trabajador.habilidades }}</p>
+                    <p><strong>Experiencia: </strong> {{ oferta.trabajador.experiencia }}</p>
+                    <h5 class="card-title" style="text-align: left; font-weight: bold;">Sobre la oferta</h5>
+                    <p><strong>Lugar: </strong> {{ oferta.lugar }} </p>
+                    <p><strong>Disponibilidad Horaria: </strong> {{ oferta.disponibilidad }} </p>
+                    <p><strong>Restricciones: </strong> {{ oferta.restricciones }} </p>
+                    <p><strong>Contacto: </strong> {{ oferta.contacto }} </p>
+                    <p><strong>Precio: </strong> {{ oferta.precio }} </p>
+                    <p><strong>Calificación: </strong></p>
+                  <a href="https://www.magneto365.com/home/" target="_blank" class="btn btn-primary">
+                    <i class="fa-solid fa-file-contract"></i>  Gestiona tu contrato con Magneto
+                  </a>
+                  <a href="#" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i>  Contacta al trabajador
+                  </a>
+                  <a href="{% url 'verOfertasEmpleador'%}" class="btn btn-primary">Regresar</a>
+                </div>
+              </div>
+        </div>
+        {% endblock content %}
+    </main>
+
+</body>
+</html>

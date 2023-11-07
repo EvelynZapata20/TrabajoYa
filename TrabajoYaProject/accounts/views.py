@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Usuario, Empleador, Trabajador
 from .forms import empleador_form_registro, trabajador_form_registro, login_form
-
+from empleador.urls import *
 # View for the home page
 def home(request):
     return render(request, 'home.html')
@@ -33,7 +33,7 @@ class empleador_signup(CreateView):
     def form_valid(self, form):
         usuario = form.save()
         login(self.request, usuario)
-        return redirect('trabajadores')
+        return redirect('verVacantes')
     
 
 class trabajador_signup(CreateView):
@@ -66,7 +66,7 @@ class login_view(LoginView):
         if usuario.is_authenticated:
             # Redirect to the correct page depending on the user type
             if usuario.es_empleador:
-                return reverse('trabajadores')
+                return reverse('verVacantes')
             elif usuario.es_trabajador:
                 return reverse('trabajadores')
         else:

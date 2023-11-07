@@ -1,0 +1,142 @@
+main {
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+    font-family: "Candara", sans-serif;
+}
+h2 {
+    font-size: xx-large;
+    color: #212121;
+    text-align: center;
+    font-weight: bold;
+  }
+
+
+.titulo {
+    text-align: center;
+    align-content: center;
+    
+}
+
+.grupoBusqueda{
+    align-items: center;
+    margin: auto;
+    width: 70%;
+    position: relative;
+}
+
+.fa-magnifying-glass{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    font-size: 20px;
+    color: #56b381;
+    transform: translateX(-10px);
+    transform: translateY(-10px);
+}
+
+.fa-arrow-down-wide-short{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    font-size: 20px;
+    color: #56b381;
+    transform: translateX(-10px);
+    transform: translateY(-10px);
+}
+
+.barraBusqueda {
+    font-family: 'Candara', sans-serif;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.controlFormulario {
+    padding: 5px 10px;
+    font-size: 17px;
+    border-radius: 5px;
+    width: 100%;
+    font-family:'Candara';
+    border: 2px solid #8ee7b7;
+    padding-left: 40px;
+}
+
+.controlFormulario:focus{
+    border: 3px solid #56b381;
+    outline: none;
+}
+
+.filtro{
+    position: relative;
+    width: 17%;
+    margin-right: 5px;
+}
+
+.nuevaOferta {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn {
+    padding: 5px 10px;
+    font-size: 17px;
+    text-decoration: none;
+    background-color: #8ee7b7;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family:"Candara";
+}
+
+.btn:hover {
+    background-color: #56b381;
+    
+}
+
+.listaOfertas {
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cartaOfertas {
+    border-radius: 8px;
+    box-shadow: 1px 1px 20px #56b381;
+    overflow: hidden;
+    width: 80%;
+    margin: 20px;
+    float: left;
+    padding: auto;
+    transition: transform 0.3s ease;
+    background-color: rgba(86, 179, 129, 0.4);
+    border: 2px solid #8ee7b7;
+}
+
+.cartaOfertas:hover {
+    box-shadow: 10px 10px 30px #56b381;
+    transform: scale(1.05); 
+}
+
+.card-body {
+    margin: 0 0 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    text-align: left;
+    font-size: large;
+    font-family: 'Candara';
+}
+
+.card-button {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px; 
+}
+

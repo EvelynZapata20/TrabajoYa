@@ -1,0 +1,82 @@
+main {
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+    font-family: "Candara", sans-serif;
+}
+h2 {
+    font-size: xx-large;
+    color: #212121;
+    text-align: center;
+    font-weight: bold;
+  }
+
+
+.titulo {
+    text-align: center;
+    align-content: center;
+    
+}
+
+.card-img-top{
+    object-fit: fill;
+    width: 25rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+
+.btn {
+    padding: 5px 10px;
+    font-size: 17px;
+    text-decoration: none;
+    background-color: #8ee7b7;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family:"Candara";
+}
+
+.btn:hover {
+    background-color: #56b381;
+    
+}
+
+
+.Oferta {
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cartaOferta {
+    border-radius: 8px;
+    box-shadow: 1px 1px 20px #56b381;
+    overflow: hidden;
+    height: min-content;
+    min-height: 40rem;
+    margin: 20px;
+    float: left;
+    padding: auto;
+    background-color: rgba(86, 179, 129, 0.4);
+    border: 2px solid #8ee7b7;
+
+}
+
+.card-body {
+    margin: 0 0 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    text-align: left;
+    font-size: large;
+    font-family: 'Candara';
+}
+
+.card-button {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px; 
+}
+
