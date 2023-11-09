@@ -56,7 +56,7 @@
                     <p><strong>Ofrecido por: </strong> {{ oferta.trabajador.nombre }}</p>
                     <p><strong>Lugar: </strong> {{ oferta.lugar }} </p>
                     <p><strong>Precio: </strong> {{ oferta.precio }} </p>
-                    <p><strong>Calificación: </strong></p>
+                    <p><strong>Calificación: </strong>{{ oferta.trabajador.calificacion_promedio }}</p>
                   <a href="{% url 'masInfo' ofertaID=oferta.id %}" class="btn btn-primary">Ver más</a>
                 </div>
               </div>

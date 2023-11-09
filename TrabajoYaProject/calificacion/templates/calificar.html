@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calificar Trabajador</title>
+</head>
+<body>
+    <h1>Calificar Trabajador</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="trabajador_id" value="{{ trabajador.id }}">
+        <label for="calidad_servicio">Calidad del Servicio:</label>
+        <input type="number" name="calidad_servicio" min="1" max="5" required>
+        <br>
+        <label for="puntualidad">Puntualidad:</label>
+        <input type="number" name="puntualidad" min="1" max="5" required>
+        <br>
+        <label for="profesionalismo">Profesionalismo:</label>
+        <input type="number" name="profesionalismo" min="1" max="5" required>
+        <br>
+        <label for="cumplimiento_acuerdos">Cumplimiento de Acuerdos:</label>
+        <input type="number" name="cumplimiento_acuerdos" min="1" max="5" required>
+        <br>
+        <label for="trato_personal">Trato Personal:</label>
+        <input type="number" name="trato_personal" min="1" max="5" required>
+        <br>
+        <label for="eficiencia">Eficiencia:</label>
+        <input type="number" name="eficiencia" min="1" max="5" required>
+        <br>
+        <input type="submit" value="Calificar">
+    </form>
+</body>
+</html>

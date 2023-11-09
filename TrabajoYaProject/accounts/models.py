@@ -2,7 +2,6 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import AbstractUser
 from datetime import date
-
 # Create your models here.
 
 class Usuario(AbstractUser):
@@ -42,6 +41,7 @@ class Trabajador(models.Model):
     celular = models.CharField(max_length=50, validators=[validar_numero])
     habilidades= models.CharField(max_length=50)
     experiencia= models.CharField(max_length=50)
-    
+    calificacion_promedio= models.DecimalField(max_digits=3, decimal_places=2, default=0.0)
+
     def __str__(self):
-        return self.name
+        return self.nombre
