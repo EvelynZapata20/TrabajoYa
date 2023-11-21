@@ -107,14 +107,13 @@ h2 {
 
 .cartaOfertas {
     border-radius: 8px;
-    box-shadow: 1px 1px 20px #56b381;
     overflow: hidden;
     width: 80%;
     margin: 20px;
     float: left;
     padding: auto;
     transition: transform 0.3s ease;
-    background-color: rgba(86, 179, 129, 0.4);
+    background-color: rgba(86, 179, 129, 0.2);
     border: 2px solid #8ee7b7;
 }
 

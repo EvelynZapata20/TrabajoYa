@@ -10,8 +10,8 @@ h2 {
 .containerFormulario {
     margin-top: -5px;
     padding: 2%;
-    background-color: rgba(86, 179, 129, 0.2);
-    border: 2px solid #8ee7b7;
+    background-color: #f5f5f5;
+    border: 2px solid rgba(190, 185, 185, 0.733);
     width: 100%;
     max-width: 1100px;
     min-height: 200px;
@@ -49,14 +49,14 @@ textarea {
     width: 100%;
     max-height: 80px; 
     resize: none;
-    border: 2px solid #8ee7b7;
+    border: 2px solid rgba(190, 185, 185, 0.733);
     font-size: 16px;
     font-family:"Candara";
     padding-left: 40px;
 }
 
 textarea:focus {
-    border: 3px solid #56b381;
+    border: 3px solid #a5a0a0;
     outline: none;
 }
 
@@ -74,7 +74,7 @@ textarea:focus {
     font-size: medium;
     padding-bottom: 5px;
     font-family:"Candara";
-    border: 2px solid #8ee7b7;
+    border: 2px solid rgba(190, 185, 185, 0.733);
     border-radius: 4px;
     height: 30px;
     padding-left: 40px;
@@ -83,7 +83,7 @@ textarea:focus {
 }
 
 .campo input:focus {
-    border: 3px solid #56b381;
+    border: 3px solid #a5a0a0;
 }
 
 .icono {
@@ -91,11 +91,11 @@ textarea:focus {
     left: 10px;
     top: 50%;
     font-size: 20px;
-    color: #56b381;
+    color: #a5a0a0;
 }
 
 .fa-solid{
-    color: #56b381;
+    color: #a5a0a0;
 }
 
 
@@ -109,7 +109,7 @@ button {
     padding: 10px 20px;
     font-size: 17px;
     text-decoration: none;
-    background-color: #8ee7b7;
+    background-color: rgba(190, 185, 185, 0.733);
     color: #000000;
     border: none;
     border-radius: 5px;
@@ -120,14 +120,14 @@ button {
 }
 
 button:hover {
-    background-color: #56b381
+    background-color: #a5a0a0
 }
 
 #botonRegresar {
     padding: 10px 20px;
     font-size: 17px;
     text-decoration: none;
-    background-color: #8ee7b7;;
+    background-color: rgba(190, 185, 185, 0.733);;
     color: #000000;
     border: none;
     border-radius: 5px;
@@ -139,7 +139,7 @@ button:hover {
 
 
 #botonRegresar:hover {
-    background-color: #56b381;
+    background-color: #a5a0a0;
 }
 
 

@@ -51,7 +51,6 @@ h2 {
 
 .cartaOferta {
     border-radius: 8px;
-    box-shadow: 1px 1px 20px #56b381;
     overflow: hidden;
     height: min-content;
     min-height: 40rem;

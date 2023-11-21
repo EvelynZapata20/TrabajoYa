@@ -8,7 +8,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Vet Clinic{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'css/trabajador/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/trabajador/baseTrabajador.css' %}">
+        <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}">
         {% block additional_styles %}
         {% endblock additional_styles %}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -20,8 +21,6 @@
         <header>
             <div class="container-top-bar">
                 <div class="top-bar">
-                    <img src="{% static 'img/logo.png' %}">
-                    <h1 class="name">TrabajoYa</h1>
                     <img src="{% static 'img/logo.png' %}">
                 </div>
         </div>
@@ -35,9 +34,11 @@
             </div>
             <div class="tabs">
                 <ul>
-                    <li><a href="">Mi Cuenta</a></li>
+                    <li><a href="{% url 'configuracion_trabajador' %}">Mi Cuenta</a></li>
                     <li><a href="{% url 'verVacantesTrabajador' %}">Vacantes</a></li>
                     <li><a href="{% url 'verOfertas' %}">Mis Servicios</a></li>
+                    <li><a href="">Historial</a></li>
+                    <li><a href="{% url 'verPrestaciones' %}">Prestaciones</a></li>
                     <li><a href="{% url 'logout' %}">Logout</a></li>
                 </ul>
             </div>  

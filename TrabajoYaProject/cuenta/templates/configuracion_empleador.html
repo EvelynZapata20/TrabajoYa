@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+{% extends 'baseEmpleador.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Mi Cuenta {% endblock %}</title>
+    {% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/cuenta/configuracion_empleador.css' %}">
+    <script src="https://kit.fontawesome.com/b685c17320.js" crossorigin="anonymous"></script>
+    {% endblock additional_styles %}
+</head>
+
+<body>
+   <main>
+        {% block content %}
+
+        <div class= "container">
+            <h1>Mi Cuenta</h1>
+            <div class= "my-account-form">
+                <form method="post">
+                {% csrf_token %}
+                <!-- Contenido -->
+                <div class="content">
+                    <!-- Imagen -->
+                    <div class="image-container">
+                        <div class="image-form">
+                            <img src="{{ form.instance.foto.url }}" alt="Foto">
+                            <br>
+                            {{ form.foto }}
+                        </div>
+                    </div>
+                    <!-- Campos -->
+                    <div class="fields-container">
+                        <div class="row">
+                            <label for="identificacion">Identificación:</label>
+                            <input type="text" id="identificacion" name="identificacion" value="{{ form.instance.identificacion }}" required>
+                        </div>
+                                
+                        <div class="row">
+                            <label for="nobre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" value="{{ form.instance.nombre }}">
+                        </div>
+
+                        <div class="row">
+                            <label for="nobre">Apellidos:</label>
+                            <input type="text" id="apellidos" name="apellidos" value="{{ form.instance.apellidos }}">
+                        </div>
+
+                        <div class="row-date">
+                            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                            {{ form.fecha_nacimiento}}
+                        </div>
+
+                        <div class="row">
+                            <label for="celular">Celular:</label>
+                            <input type="text" id="celular" name="celular" value="{{ form.instance.celular }}" required>
+                        </div>      
+                    </div>
+                </div>
+                <!-- Botones -->
+                <div class="button-container">
+                    <button type="submit" name="update_account">Guardar Cambios</button>
+                    <a id="cancel-button" href="{% url 'configuracion_empleador' %}">Cancelar</a>
+                </div>
+                </form>
+            </div>
+            
+                <div class="password-change-form">
+                    <h2>Cambio de Contraseña</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row-container-2">
+                            <div class="form-group">
+                                <label for="old_password">Contraseña Actual:</label>
+                                {{ form2.old_password }}
+                                {{ form2.old_password.errors }}
+                            </div>
+                            <div class="form-group">
+                                <label for="new_password1">Nueva Contraseña:</label>
+                                {{ form2.new_password1 }}
+                                {{ form2.new_password1.errors }}
+                            </div>
+                            <div class="form-group">
+                                <label for="new_password2">Confirmar Nueva Contraseña:</label>
+                                {{ form2.new_password2 }}
+                                {{ form2.new_password2.errors }}
+                            </div>
+                        </div>
+                    <button type="submit" name="change_password">Cambiar Contraseña</button>
+                </form>
+            </div>
+        </div>
+        
+    {% endblock content %}
+    </main>
+</body>
+</html>

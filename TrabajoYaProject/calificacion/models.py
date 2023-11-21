@@ -1,5 +1,6 @@
 from django.db import models
-from accounts.models import Empleador, Trabajador
+from cuenta.models import Empleador
+from trabajador.models import ofertaServicio
 from django.db import models
 from django.db.models import Avg
 from django.db.models.signals import post_save
@@ -8,7 +9,7 @@ from django.dispatch import receiver
 # Create your models here.
 class Calificacion(models.Model):
     empleador= models.ForeignKey(Empleador, on_delete=models.CASCADE)
-    trabajador = models.ForeignKey(Trabajador, on_delete=models.CASCADE)
+    oferta_servicio = models.ForeignKey(ofertaServicio, on_delete=models.CASCADE)
     calidad_servicio = models.PositiveIntegerField()
     puntualidad= models.PositiveIntegerField()
     profesionalismo= models.PositiveIntegerField()
@@ -17,9 +18,9 @@ class Calificacion(models.Model):
     eficiencia= models.PositiveIntegerField()
 
 @receiver(post_save, sender=Calificacion)
-def actualizar_promedio_trabajador(sender, instance, **kwargs):
-    trabajador = instance.trabajador
-    promedio_calificaciones = Calificacion.objects.filter(trabajador=trabajador).aggregate(
+def actualizar_promedio(sender, instance, **kwargs):
+    oferta_servicio = instance.oferta_servicio
+    promedio_calificaciones = Calificacion.objects.filter(oferta_servicio=oferta_servicio).aggregate(
         Avg('calidad_servicio'),
         Avg('puntualidad'),
         Avg('profesionalismo'),
@@ -29,5 +30,5 @@ def actualizar_promedio_trabajador(sender, instance, **kwargs):
     )
 
     promedio_general = sum(promedio_calificaciones.values()) / 6
-    trabajador.calificacion_promedio = promedio_general
-    trabajador.save()
+    oferta_servicio.calificacion_promedio = promedio_general
+    oferta_servicio.save()

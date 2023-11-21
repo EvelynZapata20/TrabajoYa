@@ -55,11 +55,11 @@
                 <h5 class="card-header"><strong>{{ oferta.servicio }}</strong></h5>
                 <div class="card-body">
                   <h5 class="card-title"><strong>Información</strong></h5>
-                    <p><strong>Trabajador: </strong> {{ oferta.trabajador.nombre }}</p>
+                    <p><strong>Trabajador: </strong> {{ oferta.trabajador.nombre }} {{ oferta.trabajador.apellidos }}</p>
                     <p><strong>Disponibilidad: </strong> {{ oferta.disponibilidad }} </p>
                     <p><strong>Restricciones: </strong> {{ oferta.restricciones }} </p>
                     <p><strong>Lugar: </strong> {{ oferta.lugar }} </p>
-                    <p><strong>Contacto: </strong> {{ oferta.contacto }} </p>
+                    <p><strong>Contacto: </strong> {{ oferta.trabajador.celular }} </p>
                     <p><strong>Precio: </strong> {{ oferta.precio }} </p>
                     <p><strong>Disponibilidad: </strong>
                     {% if oferta.sigue %}

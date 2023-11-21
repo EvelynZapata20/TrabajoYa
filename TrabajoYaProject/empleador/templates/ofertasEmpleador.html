@@ -53,10 +53,14 @@
                 <img class="card-img-top" src="{{ oferta.trabajador.foto.url }}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title" style="text-align: center; font-weight: bold;">{{ oferta.servicio }}</h5>
-                    <p><strong>Ofrecido por: </strong> {{ oferta.trabajador.nombre }}</p>
+                    <p><strong>Ofrecido por: </strong> {{ oferta.trabajador.nombre }} {{oferta.trabajador.apellidos}}</p>
                     <p><strong>Lugar: </strong> {{ oferta.lugar }} </p>
                     <p><strong>Precio: </strong> {{ oferta.precio }} </p>
-                    <p><strong>Calificación: </strong>{{ oferta.trabajador.calificacion_promedio }}</p>
+                    {% if oferta.calificacion_promedio == 0.0 %}
+                        <p><strong>Calificación: </strong> Sin calificación</p>
+                    {% else %}
+                        <p><strong>Calificación: </strong>{{oferta.calificacion_promedio}}</p>
+                    {% endif %}
                   <a href="{% url 'masInfo' ofertaID=oferta.id %}" class="btn btn-primary">Ver más</a>
                 </div>
               </div>

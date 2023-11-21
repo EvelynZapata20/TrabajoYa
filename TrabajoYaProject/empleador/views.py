@@ -5,8 +5,8 @@ from django.urls import reverse
 from .forms import *
 import re
 from .models import *
-from accounts.models import *
-from accounts.forms import *
+from cuenta.models import *
+from cuenta.forms import *
 from trabajador.forms import *
 from trabajador.models import *
 

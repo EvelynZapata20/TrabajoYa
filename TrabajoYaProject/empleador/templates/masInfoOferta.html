@@ -25,7 +25,7 @@
      
         <div class="Oferta">
             <div class="cartaOferta" style="width: 90rem;">
-              <a href="{% url 'calificar_trabajador' trabajador_id=oferta.trabajador.usuario.id %}">
+              <a href="{% url 'calificar_oferta_servicio' oferta_servicio_id=oferta.id %}">
                 <img class="card-img-top" src="{{ oferta.trabajador.foto.url }}" alt="Card image cap">
             </a>
                 <div class="card-body">
@@ -40,14 +40,18 @@
                     <p><strong>Lugar: </strong> {{ oferta.lugar }} </p>
                     <p><strong>Disponibilidad Horaria: </strong> {{ oferta.disponibilidad }} </p>
                     <p><strong>Restricciones: </strong> {{ oferta.restricciones }} </p>
-                    <p><strong>Contacto: </strong> {{ oferta.contacto }} </p>
+                    <p><strong>Contacto: </strong> {{ oferta.trabajador.celular }} </p>
                     <p><strong>Precio: </strong> {{ oferta.precio }} </p>
-                    <p><strong>Calificación: </strong>{{oferta.trabajador.calificacion_promedio}}</p>
-                  <a href="https://www.magneto365.com/home/" target="_blank" class="btn btn-primary">
-                    <i class="fa-solid fa-file-contract"></i>  Gestiona tu contrato con Magneto
-                  </a>
+                    {% if oferta.calificacion_promedio == 0.0 %}
+                      <p><strong>Calificación: </strong> Sin calificación</p>
+                    {% else %}
+                      <p><strong>Calificación: </strong>{{oferta.calificacion_promedio}}</p>
+                    {% endif %}
                   <a href="#" class="btn btn-primary">
                     <i class="fa-brands fa-whatsapp"></i>  Contacta al trabajador
+                  </a>
+                  <a href="#" class="btn btn-primary">
+                    <i class="fa-regular fa-circle-check"></i> Contrato Realizado
                   </a>
                   <a href="{% url 'verOfertasEmpleador'%}" class="btn btn-primary">Regresar</a>
                 </div>

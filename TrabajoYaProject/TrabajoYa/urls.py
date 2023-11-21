@@ -18,14 +18,15 @@ from django.urls import path, include
 
 from django.conf.urls.static import static
 from django.conf import settings
-from accounts import views
+from cuenta import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('cuenta/', include('cuenta.urls')),
     path('trabajador/', include('trabajador.urls')),
-    path('accounts/', include('accounts.urls')),
     path('empleador/', include('empleador.urls')),
     path('calificacion/', include('calificacion.urls')),
+    path('prestaciones/', include('prestaciones.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

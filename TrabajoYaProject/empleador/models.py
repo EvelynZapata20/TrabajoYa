@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import Empleador
+from cuenta.models import Empleador
 
 # Create your models here.
 
@@ -15,5 +15,3 @@ class VacanteLaboral(models.Model):
     empleador = models.ForeignKey(Empleador, on_delete=models.CASCADE,null=True, blank=True)
     disponibilidad = models.BooleanField(default=False)
     
-    def __str__(self):
-        return self.name

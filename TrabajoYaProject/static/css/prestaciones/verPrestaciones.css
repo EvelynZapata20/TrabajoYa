@@ -1,0 +1,88 @@
+main {
+    margin-top: 15px; 
+    margin-bottom: 15px;
+    margin: auto;
+}
+
+main > * {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-family: "Poppins";
+    font-size: 24px; 
+    color: #212121;
+    font-weight: bold; 
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+.contenedor {
+    text-align: center;
+    align-items: center;
+}
+
+.lista-prestaciones {
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta-prestacion {
+    border-radius: 8px;
+    background-color: rgba(86, 179, 129, 0.2); 
+    border: 2px solid #8ee7b7;
+    overflow: hidden;
+    width: 30%;
+    margin: 20px;
+    min-width: 400px;
+    float: left;
+    padding: auto;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    font-family: "Century Gothic";
+}
+
+span {
+    font-size: 24px; 
+    color: #000000;
+    font-weight: bold; 
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+.tarjeta-prestacion:hover {
+    box-shadow: 10px 10px 30px #56b381;
+    transform: scale(1.05); 
+}
+
+.tarjeta-prestacion .card-content {
+    padding: 15px;
+    text-align: center;
+    word-wrap: break-word;
+    flex-grow: 1;
+    font-family: "Century Gothic";
+}
+
+.oficial-boton {
+    padding: 10px 20px;
+    font-size: 17px;
+    text-decoration: none;
+    background-color: #8ee7b7;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Century Gothic";
+    font-weight: bold;
+}
+
+.oficial-boton:hover {
+    background-color: #56b381;
+}

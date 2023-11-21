@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TrabajoYa</title>
+        <link rel="stylesheet" href="{% static 'css/cuenta/home.css' %}">
+        <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-+dYYQyplGXKe2nWjuEszh2To4A05PckXX5JPT2+wtq0x+oy8NuWO8g6XeGUSQ1N8gg3CO2Ku7TM5P1Qb8ZujKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    </head>
+
+    <body>
+        <header>
+            <div class="container-top-bar">
+                <div class="top-bar">
+                    <a href={% url 'home' %}>
+                        <img src="{% static 'img/logo.png' %}" alt="Logo">
+                    </a>
+                </div>
+            </div>
+
+            <nav class="nav-bar">
+                <div class="tabs">
+                    <ul>
+                        <li><a href={% url 'home' %}>Inicio</a>
+                        <li><a href="https://www.magneto365.com/home/">Magneto</a>
+                    </ul>
+                </div>  
+            </nav>
+
+        </header>
+
+        <main>
+            <section class="home">
+                <div class="home-main">
+                    <div class="home-main-content">
+                        <p class="home-main-text">
+                            ¡Bienvenido a TrabajoYa!
+                            Encuentra soluciones a tus <br>
+                            necesiades a tan solo un clic
+                        </p>
+                        <a class="home-main-btn" href={% url 'login' %}>Iniciar Sesión</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2023 TrabajoYa. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>

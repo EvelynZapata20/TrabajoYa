@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'trabajador',
     'empleador',
-    'accounts',
+    'cuenta',
     'calificacion',
+    'prestaciones',
 ]
 
 MIDDLEWARE = [
@@ -88,11 +89,12 @@ DATABASES = {
     }
 }
 
-
+LOGIN_REDIRECT_URL = '/cuenta/login/'
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
-AUTH_USER_MODEL= 'accounts.Usuario'
+AUTH_USER_MODEL= 'cuenta.Usuario'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

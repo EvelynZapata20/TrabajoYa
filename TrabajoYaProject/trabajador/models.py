@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import Trabajador as Trabajador_
+from cuenta.models import Trabajador as Trabajador_
 
 # Create your models here.
 class Trabajador(models.Model):
@@ -24,11 +24,8 @@ class ofertaServicio(models.Model):
     disponibilidad = models.CharField(blank= False, max_length=200)
     restricciones = models.TextField(blank= False, max_length=500)
     lugar = models.TextField(blank= False, max_length=80)
-    contacto = models.TextField(blank= False, max_length=30)
     precio = models.CharField(blank= False, max_length=30)
     trabajador = models.ForeignKey(Trabajador_, on_delete=models.CASCADE,null=True, blank=True)
     sigue = models.BooleanField(default=False)
-    
-    def __str__(self):
-        return self.name
+    calificacion_promedio= models.DecimalField(max_digits=3, decimal_places=2, default=0.0)
     

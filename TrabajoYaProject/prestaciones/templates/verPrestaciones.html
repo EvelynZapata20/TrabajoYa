@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'baseTrabajador.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Prestaciones Sociales {% endblock %}</title>
+    {% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/prestaciones/verPrestaciones.css' %}">
+    <script src="https://kit.fontawesome.com/b685c17320.js" crossorigin="anonymous"></script>
+    {% endblock additional_styles %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+
+</head>
+
+<body>
+   <main>
+        {% block content %}
+        <div class="contenedor">
+            <h1>Prestaciones</h1>
+
+            <div class="lista-prestaciones">
+                {% for prestacion in prestaciones %}
+                <div class="tarjeta-prestacion">
+                    <div class="card-content p-3 mx-2">
+                        <span>{{ prestacion.nombre }}</span>
+                        <p style="text-align: center;"><strong>{{ prestacion.entidad }}</strong> </p>
+                        <p style="text-align: left;"><strong>Periodicidad: </strong>{{ prestacion.periodicidad }}</p>
+                        <p style="text-align: left;"><strong>Beneficios: </strong>{{ prestacion.beneficios }}</p>
+                        <p style="text-align: left;"><strong>Requisitos: </strong>{{ prestacion.requisitos }}</p>
+                        <a class= "oficial-boton" href="{{ prestacion.sitio_oficial }}" target="_blank">Ir al sitio oficial</a>   
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endblock content %}
+    </main>
+</body>
+</html>
