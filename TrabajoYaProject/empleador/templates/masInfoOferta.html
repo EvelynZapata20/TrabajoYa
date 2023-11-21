@@ -25,14 +25,11 @@
      
         <div class="Oferta">
             <div class="cartaOferta" style="width: 90rem;">
-              <a href="{% url 'calificar_oferta_servicio' oferta_servicio_id=oferta.id %}">
-                <img class="card-img-top" src="{{ oferta.trabajador.foto.url }}" alt="Card image cap">
-            </a>
                 <div class="card-body">
                   <h5 class="card-title" style="text-align: center; font-weight: bold;">{{ oferta.servicio }}</h5>
                   <h5 class="card-title" style="text-align: left; font-weight: bold;">Sobre el trabajador</h5>
                     <p><strong>Ofrecido por: </strong> {{ oferta.trabajador.nombre }} {{oferta.trabajador.apellidos}}</p>
-                    <p><strong>Edad: </strong> {{ oferta.trabajador.fecha_nacimiento }}</p>
+                    <p><strong>Fecha de nacimiento: </strong> {{ oferta.trabajador.fecha_nacimiento }}</p>
                     <p><strong>Celular: </strong> {{ oferta.trabajador.celular }}</p>
                     <p><strong>Habilidades: </strong> {{ oferta.trabajador.habilidades }}</p>
                     <p><strong>Experiencia: </strong> {{ oferta.trabajador.experiencia }}</p>
@@ -53,6 +50,9 @@
                   <a href="#" class="btn btn-primary">
                     <i class="fa-regular fa-circle-check"></i> Contrato Realizado
                   </a>
+                  <a href="{% url 'calificar_oferta_servicio' oferta_servicio_id=oferta.id %}" class="btn btn-primary">
+                    Calificar oferta
+                </a>
                   <a href="{% url 'verOfertasEmpleador'%}" class="btn btn-primary">Regresar</a>
                 </div>
               </div>
