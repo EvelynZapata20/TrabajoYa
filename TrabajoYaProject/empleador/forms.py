@@ -9,7 +9,7 @@ class FormularioVacante(forms.ModelForm):
             'disponibilidad': forms.CheckboxInput(attrs={'class': 'check-box'}),
         }
 
-class AppointmentForm(forms.ModelForm):
+class FormularioContrato(forms.ModelForm):
     class Meta:
         model= Contrato
         fields= ['restricciones', 'tipo', 'servicio', 'duracion','condiciones','pago','fecha_inicio']

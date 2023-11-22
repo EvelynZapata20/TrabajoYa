@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% extends 'baseEmpleador.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Nueva Vacante{% endblock %}</title>
+    {% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css\empleador\contrato.css' %}">
+    {% endblock additional_styles %}
+    {% block additional_scripts %}
+    <script src="https://kit.fontawesome.com/b685c17320.js" crossorigin="anonymous"></script>
+    {% endblock additional_scripts %}
+</head>
+<body>
+    <main>
+        {% block content %}
+        <h2>Nueva contrato</h2>
+
+        <form method="post" enctype="multipart/form-data" class="formularioPersonalizado">
+            <div class="contenedor">
+                <div class="contenedorFormulario">
+                    {% csrf_token %}
+                    <div class="contenedorCampos">
+                        <div class="campo">
+                            <label for="{{ formulario.restricciones.id_for_label }}" class="icono">
+                                <i class="fa-solid fa-user"></i>
+                            </label>
+                            <label>Restircciones</label>
+                            {{formulario.restricciones}}
+                            {% if formulario.nombre.errors %}
+                                <p class="error">{{ formulario.nombre.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="campo">
+                            <label for="{{ formulario.tipo.id_for_label }}" class="icono">
+                                <i class="fa-solid fa-business-time"></i>
+                            </label>
+                            <label>Tipo</label>
+                            {{formulario.tipo}}
+                            {% if formulario.tipo.errors %}
+                                <p class="error">{{ formulario.tipo.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="campo">
+                            <label for="{{ formulario.ubicacion.id_for_label }}" class="icono">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </label>
+                            <label>Servicio</label>
+                            {{ formulario.servicio }}
+                            {% if formulario.servicio.errors %}
+                                <p class="error">{{ formulario.servicio.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="campo">
+                            <label for="{{ formulario.descripcion.id_for_label }}" class="icono">
+                                <i class="fa-solid fa-book-medical" style="transform: translateY(-30px);"></i>
+                            </label>
+                            <label>Duracion</label>
+                            {{ formulario.duracion }}
+                            {% if formulario.duracion.errors %}
+                                <p class="error">{{ formulario.duracion.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="campo">
+                            <label for="{{ formulario.responsabilidades.id_for_label }}" class="icono">
+                                <i class="fa-solid fa-user-check" style="transform: translateY(-30px);"></i>
+                            </label>
+                            <label>Condiciones</label>
+                            {{ formulario.condiciones }}
+                            {% if formulario.condiciones.errors %}
+                                <p class="error">{{ formulario.condiciones.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="campo">
+                            <label for="{{ formulario.requisitos.id_for_label }}" class="icono">
+                                <i class="fa-solid fa-check-double" style="transform: translateY(-30px);"></i>
+                            </label>
+                            <label>Pago</label>
+                            {{ formulario.pago }}
+                            {% if formulario.pago.errors %}
+                                <p class="error">{{ formulario.pago.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="campo">
+                            <label for="{{ formulario.beneficios.id_for_label }}" class="icono">
+                            </label>
+                            <label>Fecha Inicio</label>
+                            {{ formulario.fecha_inicio }}
+                            {% if formulario.fecha_inicio.errors %}
+                                <p class="error">{{ formulario.fecha_inicio.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            
+                
+            </div>
+            <div class="crearVacante">
+                <a id="botonCancelar" href="{% url 'verVacantes' %}">Regresar</a>
+                <button type="submit" class="submit-button">Crear contrato</button>
+            </div>
+        </form>
+        {% endblock content %}
+    </main>
+</body>
+</html>

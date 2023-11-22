@@ -12,4 +12,5 @@ urlpatterns = [
     path('eliminarVacante/<int:vacanteID>/', views.eliminarVacante, name='eliminarVacante'),
     path('verOfertasEmpleador/', views.verOfertasEmpleador, name='verOfertasEmpleador'),
     path('masInfo/<int:ofertaID>/', views.masInfoOferta, name='masInfo'),
+    path('contrato/', views.contrato, name='contrato'),
 ]

@@ -1,0 +1,148 @@
+h2 {
+    font-size: xx-large;
+    color: #212121;
+    text-align: center;
+    font-weight: bold;
+  }
+
+/* Applies style the form */
+
+.contenedorFormulario {
+    margin-top: -5px;
+    padding: 2%;
+    background-color: rgba(86, 179, 129, 0.2);
+    border: 2px solid #8ee7b7;
+    width: 80%;
+    max-width: 1100px;
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.contenedorCampos {
+    width: 80%;
+    float: right;
+    margin-right: 5%;
+    margin: auto;
+}
+
+.formularioPersonalizado {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+
+.campo {
+    margin-bottom: 26px;
+    position: relative;
+    width: 100%;
+    max-width: 785px;
+}
+
+textarea {
+    max-width: 1700px;
+    width: 100%;
+    max-height: 80px; 
+    resize: none;
+    border: 2px solid #8ee7b7;
+    font-size: 16px;
+    font-family:"Candara";
+    padding-left: 30px;
+}
+
+textarea:focus {
+    border: 3px solid #56b381;
+    outline: none;
+}
+
+.campo label {
+    display: block;
+    font-size: medium;
+    color: #000000;
+    margin-bottom: 5px;
+    font-family:"Candara";
+    font-weight: bold; 
+}
+
+.campo input {
+    outline: none;
+    font-size: medium;
+    padding-bottom: 5px;
+    font-family:"Candara";
+    border: 2px solid #8ee7b7;
+    border-radius: 4px;
+    height: 30px;
+    padding-left: 30px;
+    width: 100%;
+    padding-top: 3px;
+}
+
+.campo input:focus {
+    border: 3px solid #56b381;
+}
+
+.icono {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    font-size: 20px;
+    color: #56b381;
+}
+
+.fa-solid{
+    color: #56b381;
+}
+
+/* Applies style to the buttons */
+
+.crearVacante{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.check-box{
+    background-color: #56b381;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 17px;
+    text-decoration: none;
+    background-color: #8ee7b7;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+    font-family:"Candara";
+}
+
+.submit-button:hover {
+    background-color: #56b381;
+}
+
+#botonCancelar {
+    padding: 10px 20px;
+    font-size: 17px;
+    text-decoration: none;
+    background-color: #8ee7b7;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+    font-family:"Candara";
+}
+
+
+#botonCancelar:hover {
+    background-color: #56b381;
+}
+
+

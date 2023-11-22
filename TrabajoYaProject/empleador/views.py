@@ -99,3 +99,14 @@ def verOfertasEmpleador(request):
 def masInfoOferta(request,ofertaID):
     oferta = get_object_or_404(ofertaServicio, pk=ofertaID)
     return render(request, 'masInfoOferta.html', {'oferta': oferta})
+
+def contrato(request):
+    if request.method == 'POST':
+        formulario = FormularioContrato(request.POST, request.FILES)
+        if formulario.is_valid():
+            formulario.instance.empleador = request.user.empleador
+            formulario.save()
+            return redirect('contrato')
+    else:
+        formulario = FormularioContrato()
+    return render(request, 'contrato.html',{ 'formulario':formulario})
