@@ -35,23 +35,14 @@ def verOfertas(request):
     filtro = request.GET.get('filtroBusqueda')
     ofertas = ofertaServicio.objects.filter(trabajador=request.user.trabajador)
     if terminoBusqueda:
-        if filtro == 'todo':
-            ofertas = ofertas.filter(
+        ofertas = ofertas.filter(
                 Q(servicio__icontains=terminoBusqueda) | 
                 Q(disponibilidad__icontains=terminoBusqueda) |
                 Q(restricciones__icontains=terminoBusqueda) | 
                 Q(lugar__icontains=terminoBusqueda) | 
-                Q(contacto__icontains=terminoBusqueda) | 
                 Q(precio__icontains=terminoBusqueda)
             )
-        elif filtro == 'servicio':
-            ofertas = ofertas.filter(servicio__icontains=terminoBusqueda)
-        elif filtro == 'disponibilidad':
-            ofertas = ofertas.filter(disponibilidad__icontains=terminoBusqueda)
-        elif filtro == 'lugar':
-            ofertas = ofertas.filter(lugar__icontains=terminoBusqueda)
-        elif filtro == 'precio':
-            ofertas = ofertas.filter(precio__icontains=terminoBusqueda)
+        
 
     return render(request, 'ofertasTrabajador.html', {'ofertas': ofertas})
 
