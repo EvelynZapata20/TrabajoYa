@@ -81,7 +81,6 @@ def verOfertasEmpleador(request):
                 Q(disponibilidad__icontains=terminoBusqueda) |
                 Q(restricciones__icontains=terminoBusqueda) | 
                 Q(lugar__icontains=terminoBusqueda) | 
-                Q(contacto__icontains=terminoBusqueda) | 
                 Q(precio__icontains=terminoBusqueda) |
                 Q(trabajador__nombre__icontains=terminoBusqueda)
             )
